@@ -1,1 +1,53 @@
 @use "reset";
+@use "variables" as var;
+@use "mixins" as mix;
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+$custom-colors: (
+  "success": #28a745,
+);
+$theme-colors: (
+  "primary": var.$primary,
+  "secondary": var.$secondary,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+// $theme-colors: map-remove($custom-colors, "info", "light");
+#message {
+  resize: none;
+}
+.card:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.decorate-box {
+  background-color: var.$primary;
+}
+.nav-link.custom-color {
+  color: var(--bs-gray-600);
+}
+@import "bootstrap/scss/bootstrap";
+
+.nav-link {
+  font-weight: 600;
+  font-size: large;
+  text-align: center;
+}
+.nav-link:hover {
+  cursor: pointer;
+  color: var.$secondary;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+.header-active {
+  background-color: var.$secondary;
+  color: white;
+  border-radius: 8px;
+}
+.active:hover {
+  border: 2px solid var.$secondary;
+  background-color: white;
+}
