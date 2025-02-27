@@ -4,28 +4,62 @@
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
-$custom-colors: (
-  "success": #28a745,
-);
+
 $theme-colors: (
   "primary": var.$primary,
   "secondary": var.$secondary,
 );
 
-$theme-colors: map-merge($theme-colors, $custom-colors);
-// $theme-colors: map-remove($custom-colors, "info", "light");
-#message {
-  resize: none;
-}
-.card:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
 .decorate-box {
   background-color: var.$primary;
 }
 .nav-link.custom-color {
   color: var(--bs-gray-600);
+}
+.card-item {
+  max-width: 300px;
+}
+.tab-pane:hover {
+  border: none !important;
+}
+.nav-tabs .nav-link.active {
+  border: none !important;
+  border-bottom: 3px solid var.$secondary !important;
+}
+
+// card section
+.limited-width {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.extensions-grid {
+  display: grid;
+  gap: 24px;
+  justify-content: center;
+  min-height: 400px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .extensions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-item {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .firefox {
+    align-self: center;
+  }
+
+  .opera {
+    align-self: end;
+  }
 }
 @import "bootstrap/scss/bootstrap";
 
@@ -46,6 +80,11 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   background-color: var.$secondary;
   color: white;
   border-radius: 8px;
+}
+.header-active:hover {
+  border: 2px solid var.$secondary;
+  background-color: white;
+  color: var.$secondary;
 }
 .active:hover {
   border: 2px solid var.$secondary;

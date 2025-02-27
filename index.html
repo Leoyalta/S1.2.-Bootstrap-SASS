@@ -136,13 +136,13 @@
         <div class="tab-content mt-4" id="featuresTabContent">
           <!-- Tab 1 -->
           <div
-            class="tab-pane fade "
+            class="tab-pane fade active show"
             id="bookmark"
             role="tabpanel"
             aria-labelledby="bookmark-tab"
           >
             <div class="row align-items-center">
-              <div class="col-md-6">
+              <div class="col-md-6 d-flex justify-content-center">
                 <img
                   src="./src/img/illustration-features-tab-1.svg"
                   class="img-fluid"
@@ -168,7 +168,7 @@
             aria-labelledby="search-tab"
           >
             <div class="row align-items-center">
-              <div class="col-md-6">
+              <div class="col-md-6 d-flex justify-content-center">
                 <img
                   src="./src/img/illustration-features-tab-2.svg"
                   class="img-fluid"
@@ -194,7 +194,7 @@
             aria-labelledby="sharing-tab"
           >
             <div class="row align-items-center">
-              <div class="col-md-6">
+              <div class="col-md-6 d-flex justify-content-center">
                 <img
                   src="./src/img/illustration-features-tab-3.svg"
                   class="img-fluid"
@@ -215,71 +215,54 @@
         </div>
       </section>
 
+      <!-- Card Section -->
+      
       <section class="container text-center my-5">
         <h2>Download the extension</h2>
-        <p class="text-muted">
-          We’ve got more browsers in the pipeline. Please do let us know if you
-          want us to prioritize a specific one.
-        </p>
-
-        <div class="row justify-content-center">
-
-          <!-- Chrome -->
-          <div class="col-md-4">
-            <div class="card p-4">
-              <img
-                src="./src/img/logo-chrome.svg"
-                class="mx-auto"
-                alt="Chrome"
-                width="80"
-              />
-              <h4 class="mt-3">Add to Chrome</h4>
-              <p class="text-muted">Minimum version 62</p>
-              <button class="btn btn-primary w-100">
-                Add & Install Extension
-              </button>
+          <p class="text-muted mb-4 w-60 limited-width ">
+              We’ve got more browsers in the pipeline. Please do let us know if you
+              want us to prioritize a specific one.
+          </p>
+    
+        <div class="extensions-grid">
+            <!-- Chrome -->
+            <div class="card-item">
+                <div class="card py-4  shadow">
+                    <img src="./src/img/logo-chrome.svg" class="mx-auto" alt="Chrome" width="80" />
+                    <h4 class="mt-3">Add to Chrome</h4>
+                    <p class="text-muted">Minimum version 62</p>
+                    <img class="my-4" src="./src/img/bg-dots.svg" alt="points" width="100%">
+                    <button class="btn btn-primary mx-4">Add & Install Extension</button>
+                </div>
             </div>
-          </div>
-
-          <!-- Firefox -->
-          <div class="col-md-4">
-            <div class="card p-4 shadow-sm mt-4 mt-md-0">
-              <img
-                src="./src/img/logo-firefox.svg"
-                class="mx-auto"
-                alt="Firefox"
-                width="80"
-              />
-              <h4 class="mt-3">Add to Firefox</h4>
-              <p class="text-muted">Minimum version 55</p>
-              <button class="btn btn-primary w-100">
-                Add & Install Extension
-              </button>
+    
+            <!-- Firefox -->
+            <div class="card-item firefox">
+                <div class="card py-4  shadow">
+                    <img src="./src/img/logo-firefox.svg" class="mx-auto" alt="Firefox" width="80" />
+                    <h4 class="mt-3">Add to Firefox</h4>
+                    <p class="text-muted">Minimum version 55</p>
+                    <img class="my-4" src="./src/img/bg-dots.svg" alt="points" width="100%">
+                    <button class="btn btn-primary mx-4">Add & Install Extension</button>
+                </div>
             </div>
-          </div>
-
-          <!-- Opera -->
-          <div class="col-md-4">
-            <div class="card p-4 shadow-sm mt-4 mt-md-0">
-              <img
-                src="./src/img/logo-opera.svg"
-                class="mx-auto"
-                alt="Opera"
-                width="80"
-              />
-              <h4 class="mt-3">Add to Opera</h4>
-              <p class="text-muted">Minimum version 46</p>
-              <button class="btn btn-primary w-100">
-                Add & Install Extension
-              </button>
+    
+            <!-- Opera -->
+            <div class="card-item opera">
+                <div class="card py-4 shadow">
+                    <img src="./src/img/logo-opera.svg" class="mx-auto" alt="Opera" width="80" />
+                    <h4 class="mt-3">Add to Opera</h4>
+                    <p class="text-muted">Minimum version 46</p>
+                    <img class="my-4" src="./src/img/bg-dots.svg" alt="points" width="100%">
+                    <button class="btn btn-primary mx-4">Add & Install Extension</button>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
       <section class="container text-center my-5">
         <h2>Frequently Asked Questions</h2>
-        <p class="text-muted"></p>
+        <p class="text-muted limited-width"></p>
           Here are some of our FAQs. If you have any other questions you’d like
           answered please feel free to email us.
         </p>
@@ -392,9 +375,11 @@
         </div>
       </section>
     </main>
-    <footer class="container text-center my-5">
+    <footer class="container text-center my-5 d-sm-flex-column d-md-flex align-items-center">
+      <div >
       <img src="./src/img/logo-bookmark.svg" alt="Bookmark Logo" />
-      <ul class="nav justify-content-center mt-4">
+    </div>
+      <ul class="justify-content-center mt-4 d-sm-flex-column d-md-flex gap-3">
         <li class="nav-item">
           <a class="nav-link" href="#">FEATURES</a>
         </li>
@@ -413,6 +398,7 @@
           <a class="nav-link" href="#">Facebook</a>
         </li>
       </ul>
+    </footer>
 
     <script type="module" src="./src/js/main.js"></script>
   </body>
