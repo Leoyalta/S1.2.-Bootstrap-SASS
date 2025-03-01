@@ -1,39 +1,82 @@
 @use "reset";
 @use "variables" as var;
 @use "mixins" as mix;
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/mixins";
+// @import "../node_modules/bootstrap/scss/functions";
+// @import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/mixins";
 
 $theme-colors: (
   "primary": var.$primary,
   "secondary": var.$secondary,
 );
 
-.decorate-box {
-  background-color: var.$primary;
+@import "bootstrap/scss/bootstrap";
+
+// decore
+.img-box {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
+.img-box-features {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-bottom: 6%;
+}
+.img-box-features img {
+  width: 80%;
+  height: auto;
+}
+
+.decor-box {
+  border-radius: 100px 0 0 100px;
+
+  background-color: var.$primary;
+  position: absolute;
+  z-index: -1;
+  top: 25%;
+  left: 30%;
+  width: 75%;
+  height: 75%;
+}
+.decor-features-box {
+  border-radius: 0 100px 100px 0;
+
+  background-color: var.$primary;
+  position: absolute;
+  z-index: -1;
+  top: 25%;
+  right: 30%;
+  width: 75%;
+  height: 75%;
+}
+
 .nav-link.custom-color {
   color: var(--bs-gray-600);
-}
-.card-item {
-  max-width: 300px;
 }
 .tab-pane:hover {
   border: none !important;
 }
+
 .nav-tabs .nav-link.active {
   border: none !important;
   border-bottom: 3px solid var.$secondary !important;
 }
 
-// card section
+.limited-width {
+  max-width: 498px !important;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .limited-width {
   max-width: 480px;
   margin: 0 auto;
   text-align: center;
 }
 
+// card section
 .extensions-grid {
   display: grid;
   gap: 24px;
@@ -41,6 +84,9 @@ $theme-colors: (
   min-height: 400px;
   max-width: 800px;
   margin: 0 auto;
+}
+.card-item {
+  max-width: 300px;
 }
 
 @media (min-width: 768px) {
@@ -61,8 +107,25 @@ $theme-colors: (
     align-self: end;
   }
 }
-@import "bootstrap/scss/bootstrap";
 
+// accordeon
+.accordion-container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.accordion-button::after {
+  display: none;
+}
+.accordion-icon {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+.accordion-button:not(.collapsed) .accordion-icon {
+  transform: rotate(180deg);
+  fill: red; /* або будь-який інший колір */
+}
+
+// navbar
 .nav-link {
   font-weight: 600;
   font-size: large;
