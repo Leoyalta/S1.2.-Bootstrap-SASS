@@ -115,38 +115,6 @@ meter {
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-.decorate-box {
-  background-color: #5265e1;
-}
-.nav-link.custom-color {
-  color: var(--bs-gray-600);
-}
-.card-item {
-  max-width: 300px;
-}
-.tab-pane:hover {
-  border: none !important;
-}
-.nav-tabs .nav-link.active {
-  border: none !important;
-  border-bottom: 3px solid #fa5959 !important;
-}
-.limited-width {
-  max-width: 480px;
-  margin: 0 auto;
-  text-align: center;
-}
-.extensions-grid {
-  display: grid;
-  gap: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-     -moz-box-pack: center;
-          justify-content: center;
-  min-height: 400px;
-  max-width: 800px;
-  margin: 0 auto;
-}
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -6739,6 +6707,97 @@ textarea.form-control-lg {
 .z-3 {
   z-index: 3 !important;
 }
+.img-box {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.img-box-features {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-bottom: 6%;
+}
+.img-box-features img {
+  width: 80%;
+  height: auto;
+}
+.decor-box {
+  border-radius: 100px 0 0 100px;
+  background-color: #5265e1;
+  position: absolute;
+  z-index: -1;
+  top: 25%;
+  left: 30%;
+  width: 75%;
+  height: 75%;
+}
+.decor-features-box {
+  border-radius: 0 100px 100px 0;
+  background-color: #5265e1;
+  position: absolute;
+  z-index: -1;
+  top: 25%;
+  right: 30%;
+  width: 75%;
+  height: 75%;
+}
+.nav-link.custom-color {
+  color: var(--bs-gray-600);
+}
+.tab-pane:hover {
+  border: none !important;
+}
+.nav-tabs .nav-link.active {
+  border: none !important;
+  border-bottom: 3px solid #fa5959 !important;
+}
+.limited-width {
+  max-width: 498px !important;
+  margin: 0 auto;
+  text-align: center;
+}
+.limited-width {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+.extensions-grid {
+  display: grid;
+  gap: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+          justify-content: center;
+  min-height: 400px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.card-item {
+  max-width: 300px;
+}
+.accordion-container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.accordion-button::after {
+  display: none;
+}
+.accordion-icon {
+  margin-left: auto;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -moz-transition: transform 0.3s ease, -moz-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease, -moz-transform 0.3s ease;
+}
+.accordion-button:not(.collapsed) .accordion-icon {
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  fill: red; /* або будь-який інший колір */
+}
 .nav-link {
   font-weight: 600;
   font-size: large;
@@ -7880,27 +7939,6 @@ textarea.form-control-lg {
   }
 }
 @media (min-width: 768px){
-  .extensions-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .card-item {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: flex;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-       -moz-box-align: start;
-            align-items: flex-start;
-  }
-  .firefox {
-    -webkit-align-self: center;
-            align-self: center;
-  }
-  .opera {
-    -webkit-align-self: end;
-            align-self: end;
-  }
   .container-md, .container-sm, .container {
     max-width: 720px;
   }
@@ -8953,6 +8991,27 @@ textarea.form-control-lg {
   }
   .text-md-center {
     text-align: center !important;
+  }
+  .extensions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+       -moz-box-align: start;
+            align-items: flex-start;
+  }
+  .firefox {
+    -webkit-align-self: center;
+            align-self: center;
+  }
+  .opera {
+    -webkit-align-self: end;
+            align-self: end;
   }
 }
 @media (min-width: 992px){
