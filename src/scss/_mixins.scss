@@ -1,0 +1,32 @@
+@use "variables" as var;
+@mixin limited-width($max-width: 498px) {
+  max-width: $max-width !important;
+  margin: 0 auto;
+  text-align: center;
+}
+@mixin img-box($padding-bottom: 0) {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-bottom: $padding-bottom;
+}
+
+@mixin decor-box($border-radius, $position) {
+  border-radius: $border-radius;
+  background-color: var.$primary;
+  position: absolute;
+  z-index: -1;
+  top: 25%;
+  #{$position}: 30%;
+  width: 75%;
+  height: 75%;
+}
+@mixin btn-hover($bg-color, $outline-color, $text-color) {
+  background-color: $bg-color;
+  outline: 2px solid $outline-color;
+  color: $text-color;
+}
+@mixin active-tab($border-color) {
+  border: none !important;
+  border-bottom: 3px solid $border-color !important;
+}

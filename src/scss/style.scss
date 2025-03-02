@@ -1,58 +1,51 @@
 @use "reset";
 @use "variables" as var;
-@use "mixins" as mix;
-// @import "../node_modules/bootstrap/scss/functions";
-// @import "../node_modules/bootstrap/scss/variables";
-// @import "../node_modules/bootstrap/scss/mixins";
+@use "mixins" as m;
 
 $theme-colors: (
   "primary": var.$primary,
   "secondary": var.$secondary,
+  "light-gray": var.$light-gray,
 );
 
 @import "bootstrap/scss/bootstrap";
 
-// decore
+.limited-width {
+  @include m.limited-width;
+}
 .img-box {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
+  @include m.img-box();
 }
+
 .img-box-features {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  padding-bottom: 6%;
+  @include m.img-box(6%);
 }
+
 .img-box-features img {
   width: 80%;
   height: auto;
 }
 
 .decor-box {
-  border-radius: 100px 0 0 100px;
-
-  background-color: var.$primary;
-  position: absolute;
-  z-index: -1;
-  top: 25%;
-  left: 30%;
-  width: 75%;
-  height: 75%;
+  @include m.decor-box(100px 0 0 100px, left);
 }
+
 .decor-features-box {
-  border-radius: 0 100px 100px 0;
-
-  background-color: var.$primary;
-  position: absolute;
-  z-index: -1;
-  top: 25%;
-  right: 30%;
-  width: 75%;
-  height: 75%;
+  @include m.decor-box(0 100px 100px 0, right);
 }
 
-.nav-link.custom-color {
+// btns
+.btn-custom-prim:hover {
+  @include m.btn-hover(white, var.$primary, var.$primary);
+}
+
+.btn-custom-black:hover {
+  @include m.btn-hover(white, rgb(37, 37, 37), rgb(37, 37, 37));
+}
+// nav-tabs
+.nav-link.custom-style {
+  font-size: 1.3rem;
+  font-weight: 600;
   color: var(--bs-gray-600);
 }
 .tab-pane:hover {
@@ -60,20 +53,7 @@ $theme-colors: (
 }
 
 .nav-tabs .nav-link.active {
-  border: none !important;
-  border-bottom: 3px solid var.$secondary !important;
-}
-
-.limited-width {
-  max-width: 498px !important;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.limited-width {
-  max-width: 480px;
-  margin: 0 auto;
-  text-align: center;
+  @include m.active-tab(var.$secondary);
 }
 
 // card section
@@ -127,8 +107,6 @@ $theme-colors: (
 
 // navbar
 .nav-link {
-  font-weight: 600;
-  font-size: large;
   text-align: center;
 }
 .nav-link:hover {
@@ -143,9 +121,10 @@ $theme-colors: (
   background-color: var.$secondary;
   color: white;
   border-radius: 8px;
+  padding: 0.5rem 1rem;
 }
 .header-active:hover {
-  border: 2px solid var.$secondary;
+  outline: 2px solid var.$secondary;
   background-color: white;
   color: var.$secondary;
 }
