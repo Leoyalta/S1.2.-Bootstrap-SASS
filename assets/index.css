@@ -6893,7 +6893,7 @@ textarea.form-control-lg {
      -moz-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
-  fill: red; /* або будь-який інший колір */
+  fill: red;
 }
 .nav-link {
   text-align: center;
