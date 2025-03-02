@@ -12,8 +12,8 @@ Instrucciones de Instalación y Ejecución:
    cd S1.2.-Bootstrap-SASS
 3. Instalar las dependencias:
    npm install
-4. Compilar los archivos SASS:
-   npm run sass
+4. Compilar los archivos:
+   npm run dev
 5. Abrir el archivo index.html en un navegador:
    No se requiere configuración adicional.
 
